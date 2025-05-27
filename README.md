@@ -54,6 +54,16 @@ Add this to the top of face_coords.py:
 For retinaface-torch users:
 Pass the parameter device='cuda' when initializing the detector.
 
+For retina-face users(as we are):
+Verify TensorFlow GPU detection:
+After installation, open a Python interpreter and run:
+   ```python:
+   import tensorflow as tf
+   print(tf.config.list_physical_devices('GPU'))
+   ```
+Explore the tensorflow-directml-plugin if you want to use a non-CUDA GPU or prefer not to use WSL2.
+TensorFlow-DirectML-Plugin: This allows TensorFlow to leverage DirectX 12-compatible GPUs (including AMD, Intel, and NVIDIA GPUs) on Windows. It's an alternative to CUDA for Windows users who don't want to use WSL2. You would typically install tensorflow-cpu and then the tensorflow-directml-plugin.
+
 ### 🗂 Project Structure
 - ***├── blur_faces.py***           
 Main script to run the full pipeline

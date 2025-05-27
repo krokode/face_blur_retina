@@ -160,7 +160,8 @@ if __name__ == "__main__":
 
     OUTPUT_VIDEO = f"{input_file_name}_blurfaces.mp4"
 
-    map_face(input_video_file, output_dir, bboxes_file, BLURRED_FRAMES_DIR)
+    map_face(input_video_file, output_dir, bboxes_file,
+             BLURRED_FRAMES_DIR)
     # blur_from_bboxes(bboxes_file, output_dir, BLURRED_FRAMES_DIR)
     rebuild_video_from_blurred_frames(
         BLURRED_FRAMES_DIR, output_video=OUTPUT_VIDEO)
