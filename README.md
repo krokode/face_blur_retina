@@ -55,11 +55,16 @@ For retinaface-torch users:
 Pass the parameter device='cuda' when initializing the detector.
 
 ### 🗂 Project Structure
-- ***├── blur_faces.py           # Main script to run the full pipeline***
-- ***├── face_coords.py          # Face detection using RetinaFace***
-- ***├── video_to_frames.py      # Frame extraction from video***
-- ***├── requirements.txt        # Python dependencies***
-- ***└── README.md               # This file***
+- ***├── blur_faces.py***           
+Main script to run the full pipeline
+- ***├── face_coords.py***          
+Face detection using RetinaFace
+- ***├── video_to_frames.py***      
+Frame extraction from video
+- ***├── requirements.txt***
+Python dependencies
+- ***└── README.md***
+This file
 
 ## 🔍 Function Details
 
