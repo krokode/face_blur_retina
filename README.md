@@ -55,15 +55,15 @@ For retinaface-torch users:
 Pass the parameter device='cuda' when initializing the detector.
 
 ### 🗂 Project Structure
-├── blur_faces.py           ##### Main script to run the full pipeline
-├── face_coords.py          ##### Face detection using RetinaFace
-├── video_to_frames.py      ##### Frame extraction from video
-├── requirements.txt        ##### Python dependencies
-└── README.md               ##### This file
+*├── blur_faces.py           # Main script to run the full pipeline*
+*├── face_coords.py          # Face detection using RetinaFace*
+*├── video_to_frames.py      # Frame extraction from video*
+*├── requirements.txt        # Python dependencies*
+*└── README.md               # This file*
 
-### 🔍 Function Details
+## 🔍 Function Details
 
-- **blur_faces.py**
+### blur_faces.py
 
 ##### map_face(input_video, output_directory, bboxes_file, blured_frame_dir)
 - ***Extracts frames, detects faces, saves coordinates to a JSON file, and applies blur.***
@@ -83,12 +83,12 @@ Pass the parameter device='cuda' when initializing the detector.
 ##### remove_directory(directory)
 - ***Deletes a directory and all its contents.***
 
-- **face_coords.py**
+### face_coords.py
 
 ##### get_face_coordinates(image_path)
 - ***Detects faces in an image and returns a list of dictionaries with bounding box coordinates: x1, y1, x2, y2.***
 
-- **video_to_frames.py**
+### video_to_frames.py
 
 ##### extract_frames(input_video, output_directory)
 - ***Uses ffmpeg to extract frames from a video and saves them as JPEGs.***
