@@ -114,7 +114,7 @@ to use ffmpeg as library (more pythonic way)
 consider using the functions below
 
 - *****extract_frames_with_ffmpeg_library(input_video, output_directory)*****
-- *****rebuild_video_from_blurred_frames_with_ffmpeg_library(BLURRED_FRAMES_DIR, output_video, FPS=30)*****Add commentMore actions
+- *****rebuild_video_from_blurred_frames_with_ffmpeg_library(BLURRED_FRAMES_DIR, output_video, FPS=30)*****
 
 
 
