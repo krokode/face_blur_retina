@@ -108,8 +108,11 @@ This file
 `extract_frames(input_video, output_directory)`
 - ***Uses ffmpeg as subprocess to extract frames from a video and saves them as JPEGs.***
 
+### vid_ffmpeg_to_frames_and_back.py
+
 to use ffmpeg as library (more pythonic way)
 consider using the functions below
+
 - *****extract_frames_with_ffmpeg_library(input_video, output_directory)*****
 - *****rebuild_video_from_blurred_frames_with_ffmpeg_library(BLURRED_FRAMES_DIR, output_video, FPS=30)*****
 

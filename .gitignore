@@ -1,3 +1,13 @@
+# local settings gitignore files
+*.mp4
+*.json
+requirements_tensorflow.txt
+requirements_pytorch.txt
+step_by_step.txt
+frames/
+blur_frames/
+.face-detect-retina/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -33,10 +43,6 @@ MANIFEST
 *.spec
 
 # Installer logs
-*.mp4
-*.json
-requirements_tensorflow.txt
-step_by_step.txt
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -54,8 +60,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-frames/
-blur_frames/
 
 
 # Translations
@@ -135,8 +139,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.face-detect-retina/
-#  This is a directory that contains the virtual environment for the face-detect-retina project.
 .env
 .venv
 env/
