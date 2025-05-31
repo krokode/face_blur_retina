@@ -3,8 +3,10 @@ astunparse==1.6.3
 beautifulsoup4==4.13.4
 certifi==2025.4.26
 charset-normalizer==3.4.2
+ffmpeg-python==0.2.0
 filelock==3.18.0
 flatbuffers==25.2.10
+future==1.0.0
 gast==0.6.0
 gdown==5.2.0
 google-pasta==0.2.0

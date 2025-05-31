@@ -35,7 +35,7 @@ MANIFEST
 # Installer logs
 *.mp4
 *.json
-requirements_tensor.txt
+requirements_tensorflow.txt
 step_by_step.txt
 pip-log.txt
 pip-delete-this-directory.txt
