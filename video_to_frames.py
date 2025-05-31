@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import shutil
 
 
 def extract_frames(input_video, output_directory):
@@ -41,6 +42,42 @@ def extract_frames(input_video, output_directory):
     except OSError as e:
         print(f"Error creating directory '{output_directory}': {e}")
         sys.exit(1)
+
+
+def rebuild_video_from_blurred_frames(BLURRED_FRAMES_DIR, output_video, FPS=30):
+    """
+    Rebuilds a video from blurred frames stored in a specified directory.
+
+    Args:
+        BLURRED_FRAMES_DIR (str): Directory containing the blurred frames.
+        FPS (int): Frames per second for the output video.
+        OUTPUT_VIDEO (str): The name of the output video file.
+    """
+    subprocess.run([
+        "ffmpeg", "-framerate", str(
+            FPS), "-i", f"{BLURRED_FRAMES_DIR}/frame_%06d.jpg",
+        "-c:v", "libx264", "-crf", "18", "-preset", "fast", output_video
+    ])
+    print(f"Blurred Video rebuilt and saved to: {output_video}")
+
+
+def remove_directory(directory):
+    """
+    Removes a directory and all its contents recursively.
+
+    Args:
+        directory (str): The path to the directory to be removed.
+    """
+    if os.path.exists(directory):
+        try:
+            shutil.rmtree(directory)
+            print(
+                f"Directory '{directory}' and its contents removed successfully.")
+        except OSError as e:
+            print(
+                f"Error: Could not remove directory '{directory}'. Reason: {e}")
+    else:
+        print(f"Directory '{directory}' does not exist.")
 
 
 if __name__ == "__main__":

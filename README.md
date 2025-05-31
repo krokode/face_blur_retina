@@ -92,12 +92,6 @@ This file
 `open_bboxes_file_per_frame(bboxes_file)`
 - ***Generator that yields face coordinates per frame.***
 
-`rebuild_video_from_blurred_frames(BLURRED_FRAMES_DIR, output_video, FPS=30)`
-- ***Rebuilds video from blurred image frames using ffmpeg.***
-
-`remove_directory(directory)`
-- ***Deletes a directory and all its contents.***
-
 ### face_coords.py
 
 `get_face_coordinates(image_path)`
@@ -107,6 +101,21 @@ This file
 
 `extract_frames(input_video, output_directory)`
 - ***Uses ffmpeg to extract frames from a video and saves them as JPEGs.***
+
+`rebuild_video_from_blurred_frames(BLURRED_FRAMES_DIR, output_video, FPS=30)`
+- ***Rebuilds video from blurred image frames using ffmpeg.***
+
+`remove_directory(directory)`
+- ***Deletes a directory and all its contents.***
+
+### vid_ffmpeg_to_frames_and_back.py
+
+to use ffmpeg as library (more pythonic way)
+consider using the functions below
+
+- *****extract_frames_with_ffmpeg_library(input_video, output_directory)*****
+- *****rebuild_video_from_blurred_frames_with_ffmpeg_library(BLURRED_FRAMES_DIR, output_video, FPS=30)*****Add commentMore actions
+
 
 
 ## 🧠 Credits
