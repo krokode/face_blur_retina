@@ -1,4 +1,18 @@
+import torch
 from retinaface import RetinaFace
+
+
+def set_default_tensor_type():
+    """
+    Sets the default tensor type based on CUDA availability.
+    """
+    if torch.cuda.is_available():
+        print("CUDA is available. Setting default tensor type to CUDA FloatTensor.")
+        torch.set_default_tensor_type('torch.cuda.FloatTensor')
+        print(f"GPU Name: {torch.cuda.get_device_name(0)}")
+    else:
+        torch.set_default_tensor_type('torch.FloatTensor')
+        print("CUDA is not available. Using CPU.")
 
 
 def get_face_coordinates(image_path):
@@ -11,6 +25,7 @@ def get_face_coordinates(image_path):
     Returns:
         list: A list of dictionaries containing face coordinates.
     """
+    set_default_tensor_type()
     try:
         # Detect faces in the image
         faces = RetinaFace.detect_faces(image_path)
