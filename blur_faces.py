@@ -1,4 +1,5 @@
-from video_to_frames import *
+from vid_ffmpeg_to_frames_and_back import *
+# from video_to_frames import *
 from face_coords import *
 import json
 from PIL import Image, ImageDraw, ImageFilter
@@ -13,7 +14,8 @@ def map_face(input_video, output_directory, bboxes_file, blured_frame_dir):
        output_directory (str): The path to the directory where frames will be saved.
     """
     # Extract frames from the video
-    extract_frames(input_video, output_directory)
+    # extract_frames(input_video, output_directory)
+    extract_frames_with_ffmpeg_library(input_video, output_directory)
 
     frame_faces = {}
 
@@ -126,7 +128,10 @@ if __name__ == "__main__":
     map_face(input_video_file, output_dir, bboxes_file,
              BLURRED_FRAMES_DIR)
     # blur_from_bboxes(bboxes_file, output_dir, BLURRED_FRAMES_DIR)
-    rebuild_video_from_blurred_frames(
-        BLURRED_FRAMES_DIR, output_video=OUTPUT_VIDEO)
+    # rebuild_video_from_blurred_frames(
+    #     BLURRED_FRAMES_DIR, output_video=OUTPUT_VIDEO)
+    rebuild_video_from_blurred_frames_with_ffmpeg_library(
+        BLURRED_FRAMES_DIR, OUTPUT_VIDEO, FPS=30)
+    # Clean up directories
     remove_directory(BLURRED_FRAMES_DIR)
     remove_directory(output_dir)
